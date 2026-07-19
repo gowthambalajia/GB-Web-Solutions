@@ -138,13 +138,21 @@ if (waFab) {
     );
   });
 }
-// ---------- Contact form demo ----------
-const contactForm = document.getElementById('contact-form');
-if(contactForm){
-  contactForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    contactForm.style.display = 'none';
-    const success = document.getElementById('form-success');
-    if(success) success.classList.add('show');
+// ---------- Contact Form ----------
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function () {
+
+    // Wait a moment so the browser submits the form first
+    setTimeout(() => {
+      contactForm.style.display = "none";
+
+      const success = document.getElementById("form-success");
+      if (success) {
+        success.classList.add("show");
+      }
+    }, 500);
+
   });
 }
